@@ -1,36 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./scripts/index.js" defer></script>
+
 </head>
+
 <body>
 
-  Todo
+  <header id='header'>
+    <h1>TODO</h1>
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="#FFF" fill-rule="evenodd" d="M13 0c.81 0 1.603.074 2.373.216C10.593 1.199 7 5.43 7 10.5 7 16.299 11.701 21 17.5 21c2.996 0 5.7-1.255 7.613-3.268C23.22 22.572 18.51 26 13 26 5.82 26 0 20.18 0 13S5.82 0 13 0z"/></svg>
+  </header>
 
-  <!-- Add dynamic number --> items left
+  <main id='main'>
 
-  All
-  Active 
-  Completed
+    <div class='new-todo'>
+      <button onClick='newTodo()'>Add</button>
+      <input id='new-todo' class='input-create' placeholder="Create a new todo..." />
+    </div>
 
-  Clear Completed
+    <section id='todos' class='todos'>
 
-  Drag and drop to reorder list
+      <!-- Aqui vai todos os todos -->
+      
+      <div class='items-clear'>
+        <label id='items-left'> items left</label>
+        <button class='btn-filter' onClick='clearCompleted()'>Clear Completed</button>
+      </div>
 
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">João Victor</a>.
-  </div>
+    </section>
+
+    <div class='filter'>
+      <button id='btn-all' class='btn-filter activated' onClick='filterAll()'>All</button>
+      <button id='btn-active' class='btn-filter' onClick='filterActive()'>Active</button>
+      <button id='btn-completed' class='btn-filter' onClick='filterCompleted()'>Completed</button>
+    </div>
+
+  </main>
+
+  <footer id='footer'>
+
+    <p>Drag and drop to reorder list</p>
+    
+    <div class="attribution">
+      <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">João Victor</a>.</p>
+      
+    </div>
+
+  </footer>
 </body>
+
 </html>
